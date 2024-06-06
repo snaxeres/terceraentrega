@@ -5,9 +5,8 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    /*     
-    justify-content: space-around;
-    align-items: center;; */
+    align-items: center;
+
 }
 
 .btn-container{
