@@ -75,7 +75,7 @@ body{
     border-radius: 10rem;
 }
 
-@media(min-width:200px) and (max-width:479px) {
+@media(min-width:200px) and (max-width:720px) {
     .container{
         display: flex;
         flex-direction: column;
