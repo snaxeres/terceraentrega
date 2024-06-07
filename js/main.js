@@ -30,13 +30,13 @@ const container = document.createElement("div");
 container.className = "container"
 document.body.appendChild(container)
 
-let carrito;
+let carrito =  JSON.parse(localStorage.getItem("carrito")) || [];
 
-if(localStorage.getItem("carrito")){
-    carrito = JSON.parse(localStorage.getItem("carrito"));
-} else{
-carrito = []
-}
+// if(localStorage.getItem("carrito")){
+//     carrito = JSON.parse(localStorage.getItem("carrito"));
+// } else{
+// carrito = []
+// }
 
 function crearCard(nuevoArray){
     nuevoArray.forEach(el=> {
