@@ -32,11 +32,6 @@ document.body.appendChild(container)
 
 let carrito =  JSON.parse(localStorage.getItem("carrito")) || [];
 
-// if(localStorage.getItem("carrito")){
-//     carrito = JSON.parse(localStorage.getItem("carrito"));
-// } else{
-// carrito = []
-// }
 
 function crearCard(nuevoArray){
     nuevoArray.forEach(el=> {
