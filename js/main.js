@@ -58,7 +58,9 @@ function crearCard(nuevoArray){
         const quitar = document.createElement("button")
         quitar.className = "btn-fijo"
         quitar.innerText = "Quitar del Carrito"
-        quitar.onclick = () => quitarDelCarrito(el.id, el.nombre);
+        if(carrito.includes(el)){
+            quitar.onclick = () => quitarDelCarrito(el.id, el.nombre);
+        }
 
         card.appendChild(nombre)
         card.appendChild(precio)
