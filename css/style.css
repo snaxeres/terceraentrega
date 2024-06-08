@@ -1,7 +1,74 @@
-body{
+#demoFont {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+
+.nav-container {
+    width: 100%;
+    height: 75px;
+    top: 0px;
+    margin: 5px;
+    background-image: url("https://as1.ftcdn.net/v2/jpg/05/08/48/66/1000_F_508486611_AGGG70GvDCvFMiA84LvzQfy5oGpSSAip.jpg");
+
+}
+
+.nav-buttons {
+    justify-content: center;
+    display: flex;
+}
+
+.nav-button {
+    display: inline-block;
+}
+
+.nv-btn {
+    background-color: lightgrey;
+    border: transparent;
+    border-radius: 5px 30px;
+
+    height: 30px;
+    width: 150px;
+
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 18.75px;
+}
+
+.nv-log {
+    background-color: lightgrey;
+    border: transparent;
+    border-radius: 5px 30px;
+    float: right;
+    margin-right: 25px;
+    transform: translateY(-100%)
+}
+
+.nv-btn,
+.nv-log {
+    font-weight: bold;
+}
+
+.nv-btn:hover,
+.nv-log:hover {
+
+    background-color: rgba(128, 128, 128, 0.534);
+    transition: 0.8s;
+    box-shadow: 10px 10px 25px black;
+}
+
+body {
     background-image: url("https://img.freepik.com/vector-gratis/diseno-fondo-hoja-cannabis-realista_23-2148770967.jpg");
 }
-.container{
+
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -9,7 +76,7 @@ body{
 
 }
 
-.btn-container{
+.btn-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -20,7 +87,7 @@ body{
     gap: 10px;
 }
 
-.btn-fijo{
+.btn-fijo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,7 +111,7 @@ body{
     padding: 10px;
 }
 
-.nombre{
+.nombre {
     display: flex;
     flex-direction: row;
     padding: 10px;
@@ -52,7 +119,7 @@ body{
 
 }
 
-.imagen{
+.imagen {
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -60,23 +127,49 @@ body{
     height: 70%;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(0.9);
     cursor: pointer;
     transition: all linear 0.2s;
-    background-color: #4971e3d6;  
+    background-color: #4971e3d6;
 
 }
 
 
-.btn-fijo:hover{
+.btn-fijo:hover {
     transform: scale(0.9);
     border: outset;
     border-radius: 10rem;
 }
 
+footer {
+    background-color: #29d52478;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (min-width:200px) and (max-width:720px) {
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+
 @media(min-width:200px) and (max-width:720px) {
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
     }
