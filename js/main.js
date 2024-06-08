@@ -33,6 +33,40 @@ document.body.appendChild(container)
 
 let carrito =  JSON.parse(localStorage.getItem("carrito")) || [];
 
+function alertCompra (){
+    Swal.fire({
+        title: "Felicidades has sumado un producto al carrito.",
+        text: "En la seccion mostrar carrito veras tus objetos hasta el momento.",
+        icon: "success"
+      });
+}
+
+function alertStock (){
+    Swal.fire({
+        title: "Solo se puede agregar una clase de semilla, por falta de stock, disculpe las molestias ocasionadas",
+        text: "Proximamente mejoraremos el servicio. Muchas gracias",
+        icon: "info"
+      });
+}
+
+function alertEliminarProducto (){
+    Swal.fire({
+        title: "El producto ha sido eliminado del carritoo",
+        text: "Por favor continue comprando, muchas gracias",
+        icon: "success"
+      });
+
+}
+
+function alertFin (){
+    Swal.fire({
+        title: "Su compra ha sido terminada, Muchas gracias!",
+        text: "Para reiniciar su carrito solo debe actualizar la, pagina hasta luego!",
+        icon: "success"
+      });
+    
+}
+
 
 function crearCard(nuevoArray){
     nuevoArray.forEach(el=> {
@@ -89,11 +123,11 @@ function agregarCarritoNuevo(id){
     const sumarCarrito = semillas.find(el => el.id === id);
 
     if (carrito.some(el=> el.id === id)){
-        alert ('Solo se puede agregar un tipo de semilla por compra muchas gracias.')
+        alertStock ();
     }else{
         carrito.push(sumarCarrito);
         localStorage.setItem("carrito", JSON.stringify("carrito"))
-        alert(`${sumarCarrito.nombre} Se sumo al carrito.`)
+        alertCompra ();
     }
 };
 
@@ -102,14 +136,15 @@ function quitarDelCarrito(id,nombre){
     carrito = carritoNuevo;
     localStorage.setItem("carrito", JSON.stringify(carritoNuevo))
     mostrarCarrito(2);
-    alert(`${nombre} se quito de carrito con exito.`)
+    alertEliminarProducto () ;
 };
 
 const finalizarCompra = () => {
+    alertFin ()
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(localStorage.clear(),+ alert('Muchas gracias por su compra vuelva pronto'), + (container.innerHTML = ""));
-        }, 2500);
+            resolve(localStorage.clear(), + (container.innerHTML = ""));
+        }, 5000);
     })
 }
 
