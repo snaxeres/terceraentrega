@@ -148,6 +148,21 @@ const finalizarCompra = () => {
     })
 }
 
+let arraySemas = [];
+
+fetch("./js/data.json")
+.then(response => response.json())
+.then(data => {
+    data.forEach(el => {
+        mostrarSemillas(el)
+         arraySemas.push(el);
+    })
+})
+
+setTimeout(() => {
+    console.log(arraySemas)
+}, 1200);
+
 
 
 
