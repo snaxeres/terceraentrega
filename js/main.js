@@ -13,9 +13,10 @@ btnMostarCarrito.className = "btn-fijo"
 btnMostarCarrito.onclick = ()=> mostrarCarrito(carrito);
 
 const btnAgregarSemilla = document.createElement("button")
-btnAgregarSemilla.innerText = "Ocultar Todo"
+btnAgregarSemilla.innerText = "Finalizar compra"
 btnAgregarSemilla.className = "btn-fijo"
-btnAgregarSemilla.onclick = ()=> ocultarTodo();
+btnAgregarSemilla.onclick = () => finalizarCompra(true)
+    .then((true));
 
 btnContainer.appendChild(btnMostrarSemillas)
 btnContainer.appendChild(btnMostarCarrito)
@@ -104,8 +105,12 @@ function quitarDelCarrito(id,nombre){
     alert(`${nombre} se quito de carrito con exito.`)
 };
 
-function ocultarTodo(){
-    container.innerHTML = "";    
+const finalizarCompra = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(localStorage.clear(),+ alert('Muchas gracias por su compra vuelva pronto'), + (container.innerHTML = ""));
+        }, 2500);
+    })
 }
 
 
